@@ -30,7 +30,7 @@ diff -uprN linux-3.2.82/fs/proc/base.c linux-3.2.82jk/fs/proc/base.c
  			return -ENOENT;
  		}
 -		if ((inode->i_mode == (S_IFDIR|S_IRUGO|S_IXUGO)) ||
-+		if ((inode->i_mode == (S_IFDIR|S_IRUGO|S_IXUGO)) (inode->i_mode == (S_IFDIR|S_IRUSR|S_IXUSR)) ||
++		if ((inode->i_mode == (S_IFDIR|S_IRUGO|S_IXUGO)) || (inode->i_mode == (S_IFDIR|S_IRUSR|S_IXUSR)) ||
  		    task_dumpable(task)) {
  			cred = __task_cred(task);
  			stat->uid = cred->euid;
